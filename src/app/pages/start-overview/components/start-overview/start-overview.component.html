@@ -1,0 +1,10 @@
+<div class="wrapper">
+    <header>
+        <h3>{{title.toUpperCase()}}</h3>
+    </header>
+
+    <div class="button-wrapper">
+        <app-start-button (click)="onClick($event)"></app-start-button>
+        <mat-spinner *ngIf="spinnerActive"></mat-spinner>
+    </div>
+</div>
