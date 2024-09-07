@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SpinnerService } from 'src/app/services/spinner/spinner.service';
 
 @Component({
   selector: 'app-login',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+
+  constructor(public spinnerService: SpinnerService) { }
+
+
+  public navigateGuest(): void {
+    this.spinnerService.loadSpinner('/register');
+  }
 
 }

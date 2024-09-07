@@ -3,9 +3,10 @@
     height: 150px;
     border: none;
     border-radius: 50%;
-    background-color: #36044b;
-    color: #fff;
+    background-color: var(--bgc);
+    color: var(--black);
     font-weight: bold;
+    border: var(--solid-border);
     font-size: 1.5rem;
     cursor: pointer;
 }

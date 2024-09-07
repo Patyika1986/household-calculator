@@ -1,1 +1,1 @@
-<button id="start-btn" (click)="onClick()">{{label}}</button>
+<button id="start-btn" (click)="onClick()" *ngIf="disabled">{{label}}</button>

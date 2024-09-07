@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SpinnerService } from 'src/app/services/spinner/spinner.service';
 
 @Component({
   selector: 'app-start-overview',
@@ -9,21 +10,17 @@ import { Router } from '@angular/router';
 export class StartOverviewComponent implements OnInit {
 
   
-  constructor(private router: Router) { }
+  constructor(private router: Router, public spinnerService: SpinnerService) { }
   
   public title: string = 'houshould-budget-app';
-  public spinnerActive:boolean = false;
+  public isSpinnerActive: boolean = this.spinnerService.activateSpinner();
+  public isBtnDisabled: boolean = this.spinnerService.btnDisabled();
 
   ngOnInit(): void {
   }
 
-
-  onClick(event: any): void {
-    console.log('Start button clicked');
-    this.spinnerActive = true;
-
-    setTimeout(() => {
-      this.router.navigate(['/login']);
-    },3000);
+  onClick(): void {
+    this.spinnerService.loadSpinner("/login");
+    console.log(this.spinnerService.activateSpinner());
   }
 }

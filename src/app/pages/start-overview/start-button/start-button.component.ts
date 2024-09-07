@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class StartButtonComponent {
   @Input() label: string = 'Start';
+  @Input() disabled: boolean = false;
   @Output() click = new EventEmitter<void>();
 
 

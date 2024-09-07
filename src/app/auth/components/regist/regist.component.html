@@ -1,1 +1,56 @@
-<p>regist works!</p>
+<div class="wrapper">
+    <div class="login">
+        <div class="spinner">
+            <app-spinner [isSpinnerActive]="spinnerService.activateSpinner()"></app-spinner>
+        </div>
+        <form id="form" class="shadow-drop-bl">
+            <header>
+                <h1>Register</h1>
+            </header>
+            <main>
+                <div class="rows">
+                    <div class="cols">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Username</mat-label>
+                            <textarea matInput placeholder="Type your username..."></textarea>
+                          </mat-form-field>
+                    </div>
+                </div>
+                <div class="rows">
+                    <div class="cols">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>E-Mail</mat-label>
+                            <textarea matInput placeholder="Type your email adress..."></textarea>
+                          </mat-form-field>
+                    </div>
+                </div>
+                <div class="rows">
+                    <div class="cols">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Password</mat-label>
+                            <textarea matInput placeholder="Type your password..."></textarea>
+                          </mat-form-field>
+                    </div>
+                </div>
+                <div class="rows">
+                    <div class="cols">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Repeat Password</mat-label>
+                            <textarea matInput placeholder="Please repeat password..."></textarea>
+                          </mat-form-field>
+                    </div>
+                </div>
+                <div class="rows">
+                    <div class="cols">
+                        <button
+                        mat-raised-button
+                        matTooltip="This is a tooltip!">Regist</button>
+                        <button
+                        mat-raised-button
+                        matTooltip="This is a tooltip!" (click)="navigateBack()">Back</button>
+                    </div>
+                </div>
+            </main>
+        </form>
+    </div>
+</div>
