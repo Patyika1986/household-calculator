@@ -3,7 +3,7 @@
         <div class="spinner">
             <app-spinner [isSpinnerActive]="spinnerService.activateSpinner()"></app-spinner>
         </div>
-        <form id="form" class="shadow-drop-bl">
+        <form id="form" class="shadow-drop-bl" [formGroup]="registForm">
             <header>
                 <h1>Register</h1>
             </header>
@@ -12,7 +12,7 @@
                     <div class="cols">
                         <mat-form-field class="example-full-width">
                             <mat-label>Username</mat-label>
-                            <textarea matInput placeholder="Type your username..."></textarea>
+                            <textarea matInput placeholder="Type your username..." formControlName="username"></textarea>
                           </mat-form-field>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
                     <div class="cols">
                         <mat-form-field class="example-full-width">
                             <mat-label>E-Mail</mat-label>
-                            <textarea matInput placeholder="Type your email adress..."></textarea>
+                            <textarea matInput placeholder="Type your email adress..." formControlName="email"></textarea>
                           </mat-form-field>
                     </div>
                 </div>
@@ -28,15 +28,15 @@
                     <div class="cols">
                         <mat-form-field class="example-full-width">
                             <mat-label>Password</mat-label>
-                            <textarea matInput placeholder="Type your password..."></textarea>
+                            <textarea matInput placeholder="Type your password..." formControlName="password"></textarea>
                           </mat-form-field>
                     </div>
                 </div>
                 <div class="rows">
                     <div class="cols">
                         <mat-form-field class="example-full-width">
-                            <mat-label>Repeat Password</mat-label>
-                            <textarea matInput placeholder="Please repeat password..."></textarea>
+                            <mat-label>Confirm Password</mat-label>
+                            <textarea matInput placeholder="Please confirm password..." formControlName="confirmPassword"></textarea>
                           </mat-form-field>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                     <div class="cols">
                         <button
                         mat-raised-button
-                        matTooltip="This is a tooltip!">Regist</button>
+                        matTooltip="This is a tooltip!" (click)="onSubmit()">Regist</button>
                         <button
                         mat-raised-button
                         matTooltip="This is a tooltip!" (click)="navigateBack()">Back</button>
