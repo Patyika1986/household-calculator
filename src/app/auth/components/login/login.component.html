@@ -3,7 +3,7 @@
         <div class="spinner">
             <app-spinner [isSpinnerActive]="spinnerService.activateSpinner()"></app-spinner>
         </div>
-        <form id="form" class="shadow-drop-bl">
+        <form id="form" class="shadow-drop-bl" [formGroup]="loginForm">
             <header>
                 <h1>Login</h1>
             </header>
@@ -12,7 +12,9 @@
                     <div class="cols">
                         <mat-form-field class="example-full-width">
                             <mat-label>E-Mail</mat-label>
-                            <textarea matInput placeholder="Type your email adress..."></textarea>
+                            <textarea matInput placeholder="Type your email adress..." formControlName="email">
+
+                            </textarea>
                           </mat-form-field>
                     </div>
                 </div>
@@ -20,7 +22,7 @@
                     <div class="cols">
                         <mat-form-field class="example-full-width">
                             <mat-label>Password</mat-label>
-                            <textarea matInput placeholder="Type your password..."></textarea>
+                            <textarea matInput placeholder="Type your password..." formControlName="password"></textarea>
                           </mat-form-field>
                     </div>
                 </div>
@@ -28,7 +30,7 @@
                     <div class="cols">
                         <button
                         mat-raised-button
-                        matTooltip="This is a tooltip!">Login</button>
+                        matTooltip="This is a tooltip!" (click)="signIn()">Login</button>
                         <button
                         mat-raised-button
                         matTooltip="This is a tooltip!" (click)="navigateGuest()">Guest</button>
