@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
 import { SpinnerService } from 'src/app/services/spinner/spinner.service';
+import { AuthService } from '../../service/auth.service';
 
 @Component({
   selector: 'app-regist',
@@ -9,7 +10,7 @@ import { SpinnerService } from 'src/app/services/spinner/spinner.service';
 })
 export class RegistComponent implements OnInit{
 
-  constructor(public spinnerService: SpinnerService) { }
+  constructor(public spinnerService: SpinnerService,private authService:AuthService) { }
 
   public registForm:FormGroup = new FormGroup({});
 
@@ -21,10 +22,11 @@ export class RegistComponent implements OnInit{
     this.registForm = new FormGroup({
       username: new FormControl('', [Validators.required, Validators.minLength(3)]),
       email: new FormControl('', [Validators.required, Validators.email, Validators.minLength(9)]),
-      password: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
-      confirmPassword: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
+      password: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
+      confirmPassword: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
     });
   }
+
 
 
   public navigateBack(): void {
@@ -32,6 +34,12 @@ export class RegistComponent implements OnInit{
   }
 
   public onSubmit(): void {
-    console.log(this.registForm.value);
+    if(this.registForm.valid){
+      if(this.authService.confirmPasswords(this.registForm.value.password, this.registForm.value.confirmPassword)){
+        console.log('Passwords are the same');
+      }else{
+        console.log('Passwords are not the same');
+      }
+    }
   }
 }

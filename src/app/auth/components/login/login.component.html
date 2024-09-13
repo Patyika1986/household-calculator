@@ -12,28 +12,31 @@
                     <div class="cols">
                         <mat-form-field class="example-full-width">
                             <mat-label>E-Mail</mat-label>
-                            <textarea matInput placeholder="Type your email adress..." formControlName="email">
-
-                            </textarea>
-                          </mat-form-field>
+                            <input matInput placeholder="Type your email address..." formControlName="email">
+                            <span *ngIf="loginForm.get('email')?.hasError"></span>
+                        </mat-form-field>
                     </div>
                 </div>
                 <div class="rows">
                     <div class="cols">
                         <mat-form-field class="example-full-width">
                             <mat-label>Password</mat-label>
-                            <textarea matInput placeholder="Type your password..." formControlName="password"></textarea>
-                          </mat-form-field>
+                            <input matInput placeholder="Type your password..." formControlName="password"
+                                type="password">
+                        </mat-form-field>
                     </div>
                 </div>
                 <div class="rows">
                     <div class="cols">
-                        <button
-                        mat-raised-button
-                        matTooltip="This is a tooltip!" (click)="signIn()">Login</button>
-                        <button
-                        mat-raised-button
-                        matTooltip="This is a tooltip!" (click)="navigateGuest()">Guest</button>
+                        <p>Don't have an account? <a routerLink="/register">Register here</a></p>
+                    </div>
+                </div>
+                <div class="rows">
+                    <div class="cols">
+                        <button mat-raised-button matTooltip="This is a tooltip!" (click)="signIn()">Login
+                        </button>
+                        <button mat-raised-button matTooltip="This is a tooltip!" (click)="navigateGuest()">Guest
+                        </button>
                     </div>
                 </div>
             </main>

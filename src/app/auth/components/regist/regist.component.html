@@ -12,42 +12,48 @@
                     <div class="cols">
                         <mat-form-field class="example-full-width">
                             <mat-label>Username</mat-label>
-                            <textarea matInput placeholder="Type your username..." formControlName="username"></textarea>
-                          </mat-form-field>
+                            <input matInput placeholder="Type your username..." formControlName="username">
+                        </mat-form-field>
                     </div>
                 </div>
                 <div class="rows">
                     <div class="cols">
                         <mat-form-field class="example-full-width">
                             <mat-label>E-Mail</mat-label>
-                            <textarea matInput placeholder="Type your email adress..." formControlName="email"></textarea>
-                          </mat-form-field>
+                            <input matInput placeholder="Type your email address..." formControlName="email">
+                        </mat-form-field>
                     </div>
                 </div>
                 <div class="rows">
                     <div class="cols">
                         <mat-form-field class="example-full-width">
                             <mat-label>Password</mat-label>
-                            <textarea matInput placeholder="Type your password..." formControlName="password"></textarea>
-                          </mat-form-field>
+                            <input matInput placeholder="Type your password..." formControlName="password"
+                                type="password">
+                        </mat-form-field>
                     </div>
                 </div>
                 <div class="rows">
                     <div class="cols">
                         <mat-form-field class="example-full-width">
                             <mat-label>Confirm Password</mat-label>
-                            <textarea matInput placeholder="Please confirm password..." formControlName="confirmPassword"></textarea>
-                          </mat-form-field>
+                            <input matInput placeholder="Please confirm password..." formControlName="confirmPassword"
+                                type="password">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <!-- Login Link -->
+                <div class="rows">
+                    <div class="cols">
+                        <p> <a routerLink="/login">Back to Login</a></p>
                     </div>
                 </div>
                 <div class="rows">
                     <div class="cols">
-                        <button
-                        mat-raised-button
-                        matTooltip="This is a tooltip!" (click)="onSubmit()">Regist</button>
-                        <button
-                        mat-raised-button
-                        matTooltip="This is a tooltip!" (click)="navigateBack()">Back</button>
+                        <button mat-raised-button matTooltip="This is a tooltip!" (click)="onSubmit()">Register
+                        </button>
+                        <button mat-raised-button matTooltip="This is a tooltip!" (click)="navigateBack()">Back
+                        </button>
                     </div>
                 </div>
             </main>

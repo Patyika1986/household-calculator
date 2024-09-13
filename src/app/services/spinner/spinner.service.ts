@@ -19,6 +19,6 @@ export class SpinnerService {
       this.activateSpinner.set(false);
       this.btnDisabled.set(false);
       this.router.navigate([navigate]);
-    },2000);
+    },1000);
   }
 }

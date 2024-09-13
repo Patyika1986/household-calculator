@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
 
   public navigateGuest(): void {
-    this.spinnerService.loadSpinner('/register');
+    this.spinnerService.loadSpinner('/start-overview');// finish the work page and after that navigate to the page
   }
 
 
