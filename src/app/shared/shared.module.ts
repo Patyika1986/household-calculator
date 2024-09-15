@@ -9,11 +9,17 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import { HeaderComponent } from './components/header/header.component';
+import { IncomeBtnComponent } from './components/income-btn/income-btn.component';
+import { OutputBtnComponent } from './components/output-btn/output-btn.component';
+import { BackBtnComponent } from './components/back-btn/back-btn.component';
 
 @NgModule({
   declarations: [
     SpinnerComponent,
-    HeaderComponent
+    HeaderComponent,
+    IncomeBtnComponent,
+    OutputBtnComponent,
+    BackBtnComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +28,6 @@ import { HeaderComponent } from './components/header/header.component';
     MatFormFieldModule,
     FormsModule,
     MatButtonModule,
-    
   ],
   exports: [
     SpinnerComponent,
@@ -31,7 +36,10 @@ import { HeaderComponent } from './components/header/header.component';
     MatFormFieldModule,
     FormsModule,
     MatButtonModule,
-    HeaderComponent
+    HeaderComponent,
+    IncomeBtnComponent,
+    OutputBtnComponent,
+    BackBtnComponent
   ]
 })
 export class SharedModule { }
