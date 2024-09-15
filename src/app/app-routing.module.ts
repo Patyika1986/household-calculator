@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RegistComponent } from './auth/components/regist/regist.component';
 
 const routes: Routes = [
+  { path: 'home', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule) },
   { path: 'start-overview', loadChildren: () => import('./pages/start-overview/start-overview.module').then(m => m.StartOverviewModule) },
   { path: 'login', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   { path: 'register', component: RegistComponent },
