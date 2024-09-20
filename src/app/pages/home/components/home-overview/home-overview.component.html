@@ -1,8 +1,56 @@
-<app-header></app-header>
-<div class="wrapper">
-    <div class="button-wrapper">
-        <app-back-btn></app-back-btn>
-        <app-income-btn [page]="'/income'"></app-income-btn>
-        <app-output-btn [page]="'/output'"></app-output-btn>
+<div class="cont">
+    <header>
+        <div class="text">
+            <h1>
+                Home Overview
+            </h1>
+            <div class="logout-btn">
+                <button>Logout</button>
+            </div>
+        </div>
+    </header>
+    <div class="wrapper">
+        <div class="button-wrapper">
+            <app-income-btn [page]="'/income'"></app-income-btn>
+            <app-output-btn [page]="'/output'"></app-output-btn>
+        </div>
+        <div class="info-btn">
+            <span class="material-symbols-outlined">
+                info
+            </span>
+        </div>
     </div>
+
+    <main>
+        <div class="article">
+            <header>
+                <h2>
+                    {{ title }}
+                </h2>
+            </header>
+            <p>
+                I've always wondered if there was an easier way to keep track of my monthly income and expenses, and do it all without a calculator. And so I decided to develop one simply for myself and for the men who need it. Have your first experience and click on the button below (Functionality) and read the description of how you can get the best out of the web app and benefit.
+            </p>
+        </div>
+        <button>Functionality</button>
+    </main>
+
+    <footer>
+        <ul>
+            <li>
+               <a href="#">
+                Data protection
+               </a>
+            </li>
+            <li>
+               <a href="#">
+                Imprint
+               </a>
+            </li>
+        </ul>
+        <div class="copy">
+            © {{currentDate.getFullYear()}} HouseholdCalculator
+        </div>
+
+    </footer>
 </div>
