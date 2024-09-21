@@ -16,4 +16,10 @@ export class HomeOverviewComponent {
   public title: string = 'Welcome to HouseholdCalculator';
   public currentDate: Date = new Date();
 
+
+
+  public navigateToInfo(): void {
+    console.log('navigateToInfo');
+  }
+
 }

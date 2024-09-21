@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-info-btn',
@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./info-btn.component.scss']
 })
 export class InfoBtnComponent {
+
+  @Output() openInfo = new EventEmitter<void>();
+
+
+
+
+  public navigateToInfo(): void {
+    this.openInfo.emit();
+  }
 
 }
