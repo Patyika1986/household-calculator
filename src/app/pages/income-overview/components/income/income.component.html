@@ -6,41 +6,38 @@
 </div>
 <div class="wrapper">
   <div class="content-main">
-      <main id="main">
-          <div class="content">
-            <div class="selection">
-              <mat-form-field>
-                  <mat-label>Input / Output</mat-label>
-                  <select matNativeControl required>
-                    <option value="volvo" *ngFor="let items of inputOrOutput">{{ items }}</option>
-                  </select>
-                </mat-form-field>
-            </div>
-            <div class="inputs">
-              <mat-form-field class="example-form-field">
-                <mat-label>How much money</mat-label>
-                <input matInput type="number" [(ngModel)]="value">
-                  <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                    <mat-icon>close</mat-icon>
-                  </button>
-              </mat-form-field>
-              <mat-form-field class="what-kind">
-                <mat-label>What kind</mat-label>
-                <select matNativeControl required>
-                  <option [value]="items.id" *ngFor="let items of incomeList">{{ items.title }} {{items.value}}€</option>
-                </select>
-              </mat-form-field>
-            </div>
-                <div class="add-button">
-                  <button>Add</button>
-                </div>
-            </div>
-      </main>
+    <main id="main">
+      <div class="content">
+        <div class="selection">
+          <mat-form-field>
+            <mat-label>Input / Output</mat-label>
+            <select matNativeControl required>
+              <option value="volvo" *ngFor="let items of inputOrOutput">{{ items }}</option>
+            </select>
+          </mat-form-field>
+        </div>
+        <div class="inputs">
+          <mat-form-field class="example-form-field">
+            <mat-label>How much money</mat-label>
+            <input matInput type="number" [(ngModel)]="value">
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+          <mat-form-field class="what-kind">
+            <mat-label>What kind</mat-label>
+            <select matNativeControl required>
+              <option [value]="items.id" *ngFor="let items of incomeList">{{ items.title }} {{items.value}}€</option>
+            </select>
+          </mat-form-field>
+        </div>
+        <div class="add-button">
+          <button>Add</button>
+        </div>
+      </div>
+    </main>
   </div>
-    <footer id="footer">
-        <app-footer-content></app-footer-content>
-    </footer>
+  <footer id="footer">
+    <app-footer-content></app-footer-content>
+  </footer>
 </div>
-
-
-
