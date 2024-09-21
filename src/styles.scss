@@ -5,10 +5,15 @@
 
   // colors:
   --black: rgb(25, 25, 25);
+  --green: #25c640;
+  --text-color:rgb(41, 40, 40);
 
   // borders:
   --solid-border: 1px solid var(--black);
   --solid-radius: 6px;
+
+  // shadows:
+  --shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 html, body {
   margin: 0;
