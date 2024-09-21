@@ -22,4 +22,9 @@ export class HomeOverviewComponent {
     console.log('navigateToInfo');
   }
 
+  public logout(): void {
+    console.log('logout');
+  }
+
+
 }

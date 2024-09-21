@@ -13,6 +13,7 @@ import { IncomeBtnComponent } from './components/income-btn/income-btn.component
 import { OutputBtnComponent } from './components/output-btn/output-btn.component';
 import { BackBtnComponent } from './components/back-btn/back-btn.component';
 import { InfoBtnComponent } from './components/info-btn/info-btn.component';
+import { LogoutBtnComponent } from './components/logout-btn/logout-btn.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { InfoBtnComponent } from './components/info-btn/info-btn.component';
     IncomeBtnComponent,
     OutputBtnComponent,
     BackBtnComponent,
-    InfoBtnComponent
+    InfoBtnComponent,
+    LogoutBtnComponent
   ],
   imports: [
     CommonModule,
@@ -42,7 +44,8 @@ import { InfoBtnComponent } from './components/info-btn/info-btn.component';
     IncomeBtnComponent,
     OutputBtnComponent,
     BackBtnComponent,
-    InfoBtnComponent
+    InfoBtnComponent,
+    LogoutBtnComponent
   ]
 })
 export class SharedModule { }
