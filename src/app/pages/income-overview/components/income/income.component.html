@@ -1,12 +1,46 @@
 <app-header></app-header>
+<div class="button-wrapper">
+  <app-back-btn></app-back-btn>
+  <app-income-btn [page]="'/income'"></app-income-btn>
+  <app-output-btn [page]="'/output'"></app-output-btn>
+</div>
 <div class="wrapper">
-    <div class="button-wrapper">
-        <app-back-btn></app-back-btn>
-        <app-income-btn [page]="'/income'"></app-income-btn>
-        <app-output-btn [page]="'/output'"></app-output-btn>
-    </div>
+  <div class="content-main">
+      <main id="main">
+          <div class="content">
+            <div class="selection">
+              <mat-form-field>
+                  <mat-label>Input / Output</mat-label>
+                  <select matNativeControl required>
+                    <option value="volvo" *ngFor="let items of inputOrOutput">{{ items }}</option>
+                  </select>
+                </mat-form-field>
+            </div>
+            <div class="inputs">
+              <mat-form-field class="example-form-field">
+                <mat-label>How much money</mat-label>
+                <input matInput type="number" [(ngModel)]="value">
+                  <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                    <mat-icon>close</mat-icon>
+                  </button>
+              </mat-form-field>
+              <mat-form-field class="what-kind">
+                <mat-label>What kind</mat-label>
+                <select matNativeControl required>
+                  <option [value]="items.id" *ngFor="let items of incomeList">{{ items.title }} {{items.value}}€</option>
+                </select>
+              </mat-form-field>
+            </div>
+                <div class="add-button">
+                  <button>Add</button>
+                </div>
+            </div>
+      </main>
+  </div>
     <footer id="footer">
         <app-footer-content></app-footer-content>
     </footer>
 </div>
+
+
 

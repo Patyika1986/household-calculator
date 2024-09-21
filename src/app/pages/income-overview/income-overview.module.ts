@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IncomeComponent } from './components/income/income.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { MatIconModule } from '@angular/material/icon';
 
 const routes: Routes = [
   {
@@ -18,7 +19,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    SharedModule
+    SharedModule,
+    MatIconModule
   ]
 })
 export class IncomeOverviewModule { }

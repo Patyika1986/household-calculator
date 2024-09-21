@@ -1,22 +1,26 @@
+// angular
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SpinnerComponent } from './components/spinner/spinner.component';
+import { FormsModule } from '@angular/forms';
 
 // material:
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormsModule} from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
-import { HeaderComponent } from './components/header/header.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+
+// components:
 import { IncomeBtnComponent } from './components/income-btn/income-btn.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 import { OutputBtnComponent } from './components/output-btn/output-btn.component';
 import { BackBtnComponent } from './components/back-btn/back-btn.component';
 import { InfoBtnComponent } from './components/info-btn/info-btn.component';
 import { LogoutBtnComponent } from './components/logout-btn/logout-btn.component';
 import { FunctionalityBtnComponent } from './components/functionality-btn/functionality-btn.component';
 import { FooterContentComponent } from './components/footer-content/footer-content.component';
-
 @NgModule({
   declarations: [
     SpinnerComponent,
@@ -36,6 +40,8 @@ import { FooterContentComponent } from './components/footer-content/footer-conte
     MatFormFieldModule,
     FormsModule,
     MatButtonModule,
+    MatSelectModule,
+    MatIconModule
   ],
   exports: [
     SpinnerComponent,
@@ -51,7 +57,8 @@ import { FooterContentComponent } from './components/footer-content/footer-conte
     InfoBtnComponent,
     LogoutBtnComponent,
     FunctionalityBtnComponent,
-    FooterContentComponent
+    FooterContentComponent,
+    MatIconModule
   ]
 })
 export class SharedModule { }
