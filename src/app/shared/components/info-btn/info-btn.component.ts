@@ -10,7 +10,7 @@ export class InfoBtnComponent {
   @Output() openInfo = new EventEmitter<void>();
 
 
-
+  public title: string = 'Info';
 
   public navigateToInfo(): void {
     this.openInfo.emit();

@@ -9,7 +9,7 @@ export class LogoutBtnComponent {
 
   @Output() logout = new EventEmitter<void>();
 
-
+  public label: string = 'Logout';
   public logoutUser(): void {
     this.logout.emit();
   }
