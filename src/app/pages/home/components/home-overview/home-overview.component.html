@@ -2,7 +2,7 @@
     <header id="top-header">
         <div class="text">
             <h1>
-                Home Overview
+                {{ title}}
             </h1>
             <div class="logout-btn">
                 <app-logout-btn (logout)="logout()"></app-logout-btn>
@@ -23,7 +23,7 @@
         <div class="article">
             <div class="header">
                 <h2>
-                    {{ title }}
+                    {{ greeting }}
                 </h2>
             </div>
             <p>

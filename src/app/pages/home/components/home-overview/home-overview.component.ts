@@ -13,7 +13,8 @@ export class HomeOverviewComponent {
   }
 
 
-  public title: string = 'Welcome to HouseholdCalculator';
+  public title: string = 'Home Overview';
+  public greeting: string = 'Welcome to HouseholdCalculator!';
   public currentDate: Date = new Date();
 
 
