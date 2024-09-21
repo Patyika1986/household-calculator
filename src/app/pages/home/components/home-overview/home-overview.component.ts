@@ -15,7 +15,6 @@ export class HomeOverviewComponent {
 
   public title: string = 'Home Overview';
   public greeting: string = 'Welcome to HouseholdCalculator!';
-  public currentDate: Date = new Date();
 
 
 

@@ -15,6 +15,7 @@ import { BackBtnComponent } from './components/back-btn/back-btn.component';
 import { InfoBtnComponent } from './components/info-btn/info-btn.component';
 import { LogoutBtnComponent } from './components/logout-btn/logout-btn.component';
 import { FunctionalityBtnComponent } from './components/functionality-btn/functionality-btn.component';
+import { FooterContentComponent } from './components/footer-content/footer-content.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FunctionalityBtnComponent } from './components/functionality-btn/functi
     BackBtnComponent,
     InfoBtnComponent,
     LogoutBtnComponent,
-    FunctionalityBtnComponent
+    FunctionalityBtnComponent,
+    FooterContentComponent
   ],
   imports: [
     CommonModule,
@@ -48,7 +50,8 @@ import { FunctionalityBtnComponent } from './components/functionality-btn/functi
     BackBtnComponent,
     InfoBtnComponent,
     LogoutBtnComponent,
-    FunctionalityBtnComponent
+    FunctionalityBtnComponent,
+    FooterContentComponent
   ]
 })
 export class SharedModule { }
