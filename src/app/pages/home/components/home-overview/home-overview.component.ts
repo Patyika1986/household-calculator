@@ -27,5 +27,9 @@ export class HomeOverviewComponent {
     console.log('logout');
   }
 
+  public navigateToFunctionality(): void {
+    console.log('navigateToFunctionality');
+  }
+
 
 }

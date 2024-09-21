@@ -1,0 +1,12 @@
+button {
+    width: 200px;
+    background-color: var(--green);
+    color: var(--text-color);
+    border: none;
+    padding: .5rem 1rem;
+    font-weight: bold;
+    border-radius: var(--solid-radius);
+    cursor: pointer;
+    margin-top: .5rem;
+    margin-left: .3rem;
+}
