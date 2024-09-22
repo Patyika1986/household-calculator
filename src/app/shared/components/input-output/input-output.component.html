@@ -1,6 +1,6 @@
 <mat-form-field>
     <mat-label>Input / Output</mat-label>
-    <select matNativeControl required>
-      <option value="volvo" *ngFor="let items of data">{{ items }}</option>
+    <select matNativeControl required (change)="changeSelection($event)">
+      <option [value]="items" *ngFor="let items of data">{{ items }}</option>
     </select>
 </mat-form-field>

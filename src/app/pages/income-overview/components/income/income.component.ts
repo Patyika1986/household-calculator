@@ -22,4 +22,22 @@ export class IncomeComponent {
   public onClick(): void {
     console.log('click from income component');
   }
+
+  public changeInputsOutput(selected: Event): void {
+    const selectElement = selected.target as HTMLSelectElement;
+    const selectedValue = selectElement.value;
+    console.log('Selected value: from income', selectedValue);
+  }
+
+  public readHowMuch(money: number): void {
+    console.log('Read how much', money);
+  }
+
+  public changedIncome(selectedId:string){    
+    const selectedItem = this.incomeList.find(item => item.id === selectedId);
+    if (selectedItem) {
+      console.log('Selected item:', selectedItem);
+    }
+  }
+  
 }

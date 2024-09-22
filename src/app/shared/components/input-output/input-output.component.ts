@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input-output',
@@ -8,4 +8,13 @@ import { Component, Input } from '@angular/core';
 export class InputOutputComponent {
 
   @Input() data:string[] = [];
+  @Output() changeInputsOutput = new EventEmitter<Event>();
+
+
+
+
+
+  public changeSelection(value: Event): void {
+    this.changeInputsOutput.emit(value);
+  }
 }
