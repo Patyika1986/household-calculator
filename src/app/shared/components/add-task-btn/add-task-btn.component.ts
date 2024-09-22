@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-task-btn',
@@ -7,12 +8,14 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class AddTaskBtnComponent {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
 
   @Output() click = new EventEmitter();
+  @Input() pages: string = '';
 
   public onClick(): void {
+    this.router.navigate([this.pages]);
     this.click.emit();
   }
 

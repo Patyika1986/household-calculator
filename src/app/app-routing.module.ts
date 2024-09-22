@@ -1,8 +1,10 @@
+import { AddTasksModule } from './pages/add-tasks/add-tasks.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegistComponent } from './auth/components/regist/regist.component';
 
 const routes: Routes = [
+  { path: 'add-tasks-overview', loadChildren: () => import('./pages/add-tasks/add-tasks.module').then(m => m.AddTasksModule) ,data: { title: 'Add-Task' }},
   { path: 'output', loadChildren: () => import('./pages/output-overview/output-overview.module').then(m => m.OutputOverviewModule) ,data: { title: 'Output' }},
   { path: 'income', loadChildren: () => import('./pages/income-overview/income-overview.module').then(m => m.IncomeOverviewModule),data: { title: 'Income' } },
   { path: 'home', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),data: { title: 'Home' } },

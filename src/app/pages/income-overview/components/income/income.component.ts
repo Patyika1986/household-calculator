@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { IncomeList } from 'src/app/models/income-list.model';
 import { DataService } from 'src/app/services/data/data.service';
 
 @Component({

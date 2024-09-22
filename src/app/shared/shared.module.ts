@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-
+import { MatRadioModule } from '@angular/material/radio';
 // components:
 import { IncomeBtnComponent } from './components/income-btn/income-btn.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -48,7 +48,8 @@ import { AddTaskBtnComponent } from './components/add-task-btn/add-task-btn.comp
     FormsModule,
     MatButtonModule,
     MatSelectModule,
-    MatIconModule
+    MatIconModule,
+    MatRadioModule
   ],
   exports: [
     SpinnerComponent,
@@ -68,7 +69,8 @@ import { AddTaskBtnComponent } from './components/add-task-btn/add-task-btn.comp
     MatIconModule,
     InputOutputComponent,
     AddBtnComponent,
-    AddTaskBtnComponent
+    AddTaskBtnComponent,
+    MatRadioModule
   ]
 })
 export class SharedModule { }
