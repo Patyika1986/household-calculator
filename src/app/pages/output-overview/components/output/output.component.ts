@@ -31,6 +31,7 @@ export class OutputComponent implements OnInit {
     {id:'17',title:'Rent',value:950.93,thePurposeOf:'The purpose of Edition 17',ibahn:'IBAN 17',since:new Date(),recipient:'Recipient 17'},
     {id:'18',title:'Menza',value:100,thePurposeOf:'The purpose of Edition 18',ibahn:'IBAN 18',since:new Date(),recipient:'Recipient 18'},
     {id:'19',title:'Kindergarten',value:73,thePurposeOf:'The purpose of Edition 19',ibahn:'IBAN 19',since:new Date(),recipient:'Recipient 19'},
+    {id:'20',title:'Test',value:0,thePurposeOf:'The purpose of Edition 20',ibahn:'IBAN 20',since:new Date(),recipient:'Recipient 20'},
   ];
   public value = 'Clear me';
 
@@ -42,6 +43,14 @@ export class OutputComponent implements OnInit {
 
   public onClick(): void {
     console.log('click from output component');
+  }
+
+
+  /*
+  It should be checked whether value is 0, if so then show how much input, otherwise hide it
+  */ 
+  private checkIfValueNull(){
+    this.whichEdition.filter(x => x.value === 0);
   }
 
 }
