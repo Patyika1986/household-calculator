@@ -8,11 +8,11 @@ import { IncomeList } from 'src/app/models/income-list.model';
 })
 export class IncomeComponent {
 
-  public inputOrOutput: string[] = ['Input','Output'];
+  public inputOrOutput: string[] = ['Input', 'Output'];
   public isMoneyActive = false;
-  
-  
-  public incomeList:IncomeList[] = [
+
+
+  public incomeList: IncomeList[] = [
     { id: '1', title: 'Salary', value: 3200 },
     { id: '2', title: 'Child benefit ', value: 750 },
     { id: '3', title: 'Child allowance', value: 600 },
@@ -37,12 +37,12 @@ export class IncomeComponent {
     console.log('Read how much', money);
   }
 
-  public changedIncome(selectedId:string){    
+  public changedIncome(selectedId: string) {
     const selectedItem = this.incomeList.find(item => item.id === selectedId);
     if (selectedItem) {
       selectedItem.value === 0 ? this.isMoneyActive = true : this.isMoneyActive = false;
-      console.log('Selected item:', selectedItem);
+      console.log('Selected from income item:', selectedItem);
     }
   }
-  
+
 }

@@ -22,7 +22,7 @@
           <mat-form-field class="what-kind">
             <mat-label>What kind</mat-label>
             <select matNativeControl required #data (change)="changedIncome(data.value)">
-              <option [value]="items.id" *ngFor="let items of incomeList" >{{ items.title }} {{items.value}}€</option>
+              <option [value]="items.id" *ngFor="let items of incomeList">{{ items.title }} {{items.value}}€</option>
             </select>
           </mat-form-field>
         </div>

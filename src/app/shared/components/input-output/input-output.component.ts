@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class InputOutputComponent {
 
-  @Input() data:string[] = [];
+  @Input() data: string[] = [];
   @Output() changeInputsOutput = new EventEmitter<Event>();
 
 
