@@ -23,6 +23,7 @@ import { FunctionalityBtnComponent } from './components/functionality-btn/functi
 import { FooterContentComponent } from './components/footer-content/footer-content.component';
 import { InputOutputComponent } from './components/input-output/input-output.component';
 import { AddBtnComponent } from './components/add-btn/add-btn.component';
+import { AddTaskBtnComponent } from './components/add-task-btn/add-task-btn.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AddBtnComponent } from './components/add-btn/add-btn.component';
     FunctionalityBtnComponent,
     FooterContentComponent,
     InputOutputComponent,
-    AddBtnComponent
+    AddBtnComponent,
+    AddTaskBtnComponent
   ],
   imports: [
     CommonModule,
@@ -65,7 +67,8 @@ import { AddBtnComponent } from './components/add-btn/add-btn.component';
     FooterContentComponent,
     MatIconModule,
     InputOutputComponent,
-    AddBtnComponent
+    AddBtnComponent,
+    AddTaskBtnComponent
   ]
 })
 export class SharedModule { }
