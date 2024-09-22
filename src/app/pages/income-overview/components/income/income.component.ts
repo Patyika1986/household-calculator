@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IncomeList } from 'src/app/models/income-list.model';
+import { DataService } from 'src/app/services/data/data.service';
 
 @Component({
   selector: 'app-income',
@@ -8,17 +9,10 @@ import { IncomeList } from 'src/app/models/income-list.model';
 })
 export class IncomeComponent {
 
+  constructor(public dataService:DataService) { }
+
   public inputOrOutput: string[] = ['Input', 'Output'];
   public isMoneyActive = false;
-
-
-  public incomeList: IncomeList[] = [
-    { id: '1', title: 'Salary', value: 3200 },
-    { id: '2', title: 'Child benefit ', value: 750 },
-    { id: '3', title: 'Child allowance', value: 600 },
-    { id: '4', title: 'Test', value: 0 },
-
-  ];
 
   public value = 'Clear me';
 
@@ -38,7 +32,7 @@ export class IncomeComponent {
   }
 
   public changedIncome(selectedId: string) {
-    const selectedItem = this.incomeList.find(item => item.id === selectedId);
+    const selectedItem = this.dataService.incomeList.find(item => item.id === selectedId);
     if (selectedItem) {
       selectedItem.value === 0 ? this.isMoneyActive = true : this.isMoneyActive = false;
       console.log('Selected from income item:', selectedItem);

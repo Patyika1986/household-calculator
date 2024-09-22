@@ -7,4 +7,5 @@ export interface WhitchEdition {
     since: Date;
     recipient:string;
     kind:string;
+    isOutOrIncome:boolean;
 }
