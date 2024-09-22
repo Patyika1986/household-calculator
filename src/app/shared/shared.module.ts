@@ -21,6 +21,8 @@ import { InfoBtnComponent } from './components/info-btn/info-btn.component';
 import { LogoutBtnComponent } from './components/logout-btn/logout-btn.component';
 import { FunctionalityBtnComponent } from './components/functionality-btn/functionality-btn.component';
 import { FooterContentComponent } from './components/footer-content/footer-content.component';
+import { InputOutputComponent } from './components/input-output/input-output.component';
+
 @NgModule({
   declarations: [
     SpinnerComponent,
@@ -31,7 +33,8 @@ import { FooterContentComponent } from './components/footer-content/footer-conte
     InfoBtnComponent,
     LogoutBtnComponent,
     FunctionalityBtnComponent,
-    FooterContentComponent
+    FooterContentComponent,
+    InputOutputComponent
   ],
   imports: [
     CommonModule,
@@ -58,7 +61,8 @@ import { FooterContentComponent } from './components/footer-content/footer-conte
     LogoutBtnComponent,
     FunctionalityBtnComponent,
     FooterContentComponent,
-    MatIconModule
+    MatIconModule,
+    InputOutputComponent
   ]
 })
 export class SharedModule { }
