@@ -1,0 +1,9 @@
+button {
+    width: 200px;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: var(--solid-radius);
+    background-color: var(--green);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+}

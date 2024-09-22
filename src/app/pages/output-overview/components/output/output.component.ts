@@ -40,4 +40,8 @@ export class OutputComponent implements OnInit {
     this.currentTitle = this.titleService.getTitle();
   }
 
+  public onClick(): void {
+    console.log('click from output component');
+  }
+
 }

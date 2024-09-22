@@ -37,4 +37,9 @@ export class IncomeComponent {
     {id:'19',title:'Kindergarten',value:73,thePurposeOf:'The purpose of Edition 19',ibahn:'IBAN 19',since:new Date(),recipient:'Recipient 19'},
   ];
   public value = 'Clear me';
+
+
+  public onClick(): void {
+    console.log('click from income component');
+  }
 }
