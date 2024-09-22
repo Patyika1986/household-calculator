@@ -6,4 +6,5 @@ export interface WhitchEdition {
     ibahn:string;
     since: Date;
     recipient:string;
+    kind:string;
 }
