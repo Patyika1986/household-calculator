@@ -17,8 +17,10 @@
 
     #form {
         width: 100%;
-        height: 100%;
+        height: 80%;
         margin-top: 1rem;
+        padding: 1rem;
+
         background-color: white;
         border-radius: var(--solid-radius);
         box-shadow: var(--shadow);
@@ -33,7 +35,7 @@
 
         .content {
             width: 100%;
-            height: 80%;
+            height: 60%;
 
             .inputs {
 
@@ -46,7 +48,7 @@
         }
 
         .button {
-            margin-top: 3rem;
+            margin-top: 4rem;
         }
     }
 }

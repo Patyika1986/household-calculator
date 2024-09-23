@@ -7,61 +7,57 @@
 <div class="wrapper">
     <div class="input-output">
         <label>It is: </label>
-        <mat-radio-group>
-          <mat-radio-button value="auto">Income</mat-radio-button>
-          <mat-radio-button value="always">Output</mat-radio-button>
+        <mat-radio-group (change)="changeIncomeOutput(income,expense)">
+          <mat-radio-button [value]="isIncome" #income>Income</mat-radio-button>
+          <mat-radio-button [value]="isExpense" #expense>Output</mat-radio-button>
         </mat-radio-group>
     </div>
-    <form id="form">
+    <div id="form" [formGroup]="form">
         <div class="form-header">
             <h2>Add task</h2>
         </div>
         <div class="content">
             <div class="inputs">
                 <mat-form-field>
-                    <mat-label>Input</mat-label>
-                    <input matInput>
+                    <mat-label>Title</mat-label>
+                    <input matInput type="text" name="title" formControlName="title">
                 </mat-form-field>
                 <mat-form-field>
-                    <mat-label>Input</mat-label>
-                    <input matInput>
+                    <mat-label>Value</mat-label>
+                    <input matInput type="number" name="value" formControlName="value">
+                </mat-form-field>
+            </div>
+            <div class="inputs" *ngIf="isExpense">
+                <mat-form-field>
+                    <mat-label>The Purpose Of</mat-label>
+                    <input matInput name="purpose" formControlName="purpose">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>IBAHN</mat-label>
+                    <input matInput type="text" name="ibahn" formControlName="ibahn">
                 </mat-form-field>
             </div>
             <div class="inputs">
                 <mat-form-field>
-                    <mat-label>Input</mat-label>
-                    <input matInput>
+                    <mat-label>Since</mat-label>
+                    <input matInput type="date" name="since" formControlName="since">
                 </mat-form-field>
-                <mat-form-field>
-                    <mat-label>Input</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div class="inputs">
-                <mat-form-field>
-                    <mat-label>Input</mat-label>
-                    <input matInput>
-                </mat-form-field>
-                <mat-form-field>
-                    <mat-label>Input</mat-label>
-                    <input matInput>
+                <mat-form-field *ngIf="isExpense">
+                    <mat-label>Recipient</mat-label>
+                    <input matInput type="text" name="recipient" formControlName="recipient">
                 </mat-form-field>
             </div>
             <div class="inputs">
                 <mat-form-field>
-                    <mat-label>Input</mat-label>
-                    <input matInput>
-                </mat-form-field>
-                <mat-form-field>
-                    <mat-label>Input</mat-label>
-                    <input matInput>
+                    <mat-label>Kind</mat-label>
+                    <input matInput type="text" name="kind" formControlName="kind">
                 </mat-form-field>
             </div>
         </div>
         <div class="button">
-            <app-add-task-btn></app-add-task-btn>
+    <button (click)="onSubmit()">Add</button>
         </div>
-    </form>
+    </div>
   <footer id="footer">
     <app-footer-content></app-footer-content>
   </footer>
