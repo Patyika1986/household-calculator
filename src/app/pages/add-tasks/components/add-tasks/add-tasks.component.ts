@@ -1,9 +1,5 @@
-import { Component, forwardRef, OnInit } from '@angular/core';
-import {ChangeDetectionStrategy} from '@angular/core';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import { FormBuilder, FormGroup, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-add-tasks',
   templateUrl: './add-tasks.component.html',
@@ -40,8 +36,6 @@ export class AddTasksComponent implements OnInit {
   }
 
   public changeIncomeOutput(isIncome:any,isExpense:any): void {
-    console.warn('income',isIncome._checked)
-    console.warn('expense',isExpense)
     this.isIncome = isIncome._checked;
     this.isExpense = isExpense._checked;
     if(isIncome._checked){
@@ -53,10 +47,6 @@ export class AddTasksComponent implements OnInit {
       this.form.addControl('ibahn', this.fb.control('', Validators.required));
       this.form.addControl('recipient', this.fb.control('', Validators.required));
     }
-
-    // income = mat-radio-2
-    // expense = mat-radio-3
-
   }
 
   public onSubmit() {
