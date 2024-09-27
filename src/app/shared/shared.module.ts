@@ -25,6 +25,7 @@ import { FooterContentComponent } from './components/footer-content/footer-conte
 import { InputOutputComponent } from './components/input-output/input-output.component';
 import { AddBtnComponent } from './components/add-btn/add-btn.component';
 import { AddTaskBtnComponent } from './components/add-task-btn/add-task-btn.component';
+import { IncomeExpenseBtnComponent } from './components/income-expense-btn/income-expense-btn.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { AddTaskBtnComponent } from './components/add-task-btn/add-task-btn.comp
     FooterContentComponent,
     InputOutputComponent,
     AddBtnComponent,
-    AddTaskBtnComponent
+    AddTaskBtnComponent,
+    IncomeExpenseBtnComponent
   ],
   imports: [
     CommonModule,
@@ -73,7 +75,8 @@ import { AddTaskBtnComponent } from './components/add-task-btn/add-task-btn.comp
     AddBtnComponent,
     AddTaskBtnComponent,
     MatRadioModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    IncomeExpenseBtnComponent
   ]
 })
 export class SharedModule { }

@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RegistComponent } from './auth/components/regist/regist.component';
 
 const routes: Routes = [
+  { path: 'income-expense-overview', loadChildren: () => import('./pages/income-expense-overview/income-expense-overview.module').then(m => m.IncomeExpenseOverviewModule),data: { title: 'Income-Expense' } },
   { path: 'add-tasks-overview', loadChildren: () => import('./pages/add-tasks/add-tasks.module').then(m => m.AddTasksModule) ,data: { title: 'Add-Task' }},
   { path: 'output', loadChildren: () => import('./pages/output-overview/output-overview.module').then(m => m.OutputOverviewModule) ,data: { title: 'Output' }},
   { path: 'income', loadChildren: () => import('./pages/income-overview/income-overview.module').then(m => m.IncomeOverviewModule),data: { title: 'Income' } },
