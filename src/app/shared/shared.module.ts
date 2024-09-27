@@ -11,7 +11,11 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
-import  {MatDatepickerModule } from '@angular/material/datepicker';
+import  { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatCardModule } from '@angular/material/card';
+import { MatBadgeModule } from '@angular/material/badge';
 // components:
 import { IncomeBtnComponent } from './components/income-btn/income-btn.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -26,6 +30,7 @@ import { InputOutputComponent } from './components/input-output/input-output.com
 import { AddBtnComponent } from './components/add-btn/add-btn.component';
 import { AddTaskBtnComponent } from './components/add-task-btn/add-task-btn.component';
 import { IncomeExpenseBtnComponent } from './components/income-expense-btn/income-expense-btn.component';
+import { IncomeExpenseListComponent } from './components/income-expense-list/income-expense-list.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +46,8 @@ import { IncomeExpenseBtnComponent } from './components/income-expense-btn/incom
     InputOutputComponent,
     AddBtnComponent,
     AddTaskBtnComponent,
-    IncomeExpenseBtnComponent
+    IncomeExpenseBtnComponent,
+    IncomeExpenseListComponent
   ],
   imports: [
     CommonModule,
@@ -53,7 +59,11 @@ import { IncomeExpenseBtnComponent } from './components/income-expense-btn/incom
     MatSelectModule,
     MatIconModule,
     MatRadioModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatSlideToggleModule,
+    MatCheckboxModule,
+    MatCardModule,
+    MatBadgeModule
   ],
   exports: [
     SpinnerComponent,
@@ -76,7 +86,8 @@ import { IncomeExpenseBtnComponent } from './components/income-expense-btn/incom
     AddTaskBtnComponent,
     MatRadioModule,
     MatDatepickerModule,
-    IncomeExpenseBtnComponent
+    IncomeExpenseBtnComponent,
+    IncomeExpenseListComponent
   ]
 })
 export class SharedModule { }

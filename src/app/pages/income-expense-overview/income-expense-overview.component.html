@@ -10,10 +10,13 @@
   <div class="content-main">
     <main id="main">
       <div class="content">
+        <app-income-expense-list [items]="items" (checked)="checked" (disabled)="disabled"
+          (changeIncome)="onChangeIncome($event)" (changeExpense)="onChangeExpense($event)"
+          (changeSort)="changeSort($event)"></app-income-expense-list>
       </div>
     </main>
+    <footer id="footer">
+      <app-footer-content></app-footer-content>
+    </footer>
   </div>
-  <footer id="footer">
-    <app-footer-content></app-footer-content>
-  </footer>
 </div>

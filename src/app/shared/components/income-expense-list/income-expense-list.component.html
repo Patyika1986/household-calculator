@@ -1,0 +1,43 @@
+<div class="header">
+  <div class="wrapper">
+    <div class="toggle">
+      <mat-card class="result">
+        <mat-slide-toggle class="example-margin" [checked]="checked" [disabled]="disabled"
+          (change)="onChangeSort($event.checked)">
+          sort
+        </mat-slide-toggle>
+      </mat-card>
+      &nbsp;
+      <mat-card class="result">
+        <mat-slide-toggle class="example-margin" [checked]="checked" [disabled]="disabled"
+          (change)="onChangeIncome($event.checked)">
+          Income
+        </mat-slide-toggle>
+      </mat-card>
+      &nbsp;
+      <mat-card class="result">
+        <mat-slide-toggle class="example-margin" [checked]="checked" [disabled]="disabled"
+          (change)="onChangeExpense($event.checked)">
+          Expense
+        </mat-slide-toggle>
+      </mat-card>
+    </div>
+    <div class="btn-box">
+      <button mat-raised-button [matBadge]="items.length" matBadgePosition="after">
+        items
+      </button>
+    </div>
+  </div>
+</div>
+<div class="cont" *ngFor="let item of items">
+  <div class="list">
+    <div class="date">{{item.since.toLocaleDateString()}}</div>
+    <div class="item">{{item.title}}.</div>
+    <div class="amount"
+      [ngStyle]="{'--list-bg-color': item.isOutOrIncome ? 'var(--list-bg-green)' : 'var(--list-bg-red)'}">
+      {{item.value}}€</div>
+    <div class="info">
+      <app-info-btn></app-info-btn>
+    </div>
+  </div>
+</div>

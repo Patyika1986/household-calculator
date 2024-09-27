@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { IncomeList } from 'src/app/models/income-list.model';
 import { WhitchEdition } from 'src/app/models/whitch-edition.model';
 
@@ -8,6 +9,9 @@ import { WhitchEdition } from 'src/app/models/whitch-edition.model';
 export class DataService {
 
   constructor() { }
+
+  private _list$:BehaviorSubject<WhitchEdition[] | IncomeList[]> = new BehaviorSubject<WhitchEdition[] | IncomeList[]>([]);
+  public list$:Observable<WhitchEdition[] | IncomeList[]> = this._list$.asObservable();
 
   public whichEdition: WhitchEdition[] = [
     { id: '1', title: 'Hörnlein', value: 20, thePurposeOf: 'The purpose of Edition 1', ibahn: 'IBAN 1', since: new Date(), recipient: 'Recipient 1', kind: 'Debts',isOutOrIncome: false },
@@ -33,9 +37,17 @@ export class DataService {
   ];
 
   public incomeList: IncomeList[] = [
-    { id: '1', title: 'Salary', value: 3200, isOutOrIncome: true },
-    { id: '2', title: 'Child benefit ', value: 750, isOutOrIncome: true },
-    { id: '3', title: 'Child allowance', value: 600, isOutOrIncome: true },
-    { id: '4', title: 'Test', value: 0, isOutOrIncome: true },
+    { id: '1', title: 'Salary', value: 3200, since:new Date(), isOutOrIncome: true },
+    { id: '2', title: 'Child benefit ', value: 750, since:new Date(), isOutOrIncome: true },
+    { id: '3', title: 'Child allowance', value: 600, since:new Date(), isOutOrIncome: true },
+    { id: '4', title: 'Test', value: 0, since:new Date(), isOutOrIncome: true },
   ];
+
+
+  public loadMergedLists(): void {
+    this._list$.next([...this.whichEdition, ...this.incomeList]);
+  }
+
+
+
 }

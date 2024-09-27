@@ -33,6 +33,7 @@
         padding-top: .5rem;
         padding-bottom: .5rem;
 
+
         .info-btn {
             width: 40px;
             height: 40px;
@@ -83,6 +84,21 @@
     }
 }
 
+@media (max-width: 768px){
+    .button-wrapper {
+        display: flex;
+        flex-direction: column;
+        background-color: yellowgreen;
+        margin-top: 4rem;
+        padding: 1rem;
+        justify-content: left;
+    }
+    .wrapper {
+        width: 100%;
+        border-radius: var(--solid-radius);
+    }
+}
+
 // Responsive design
 @media (min-width: 768px) {
     .cont {
@@ -93,6 +109,8 @@
             width: 100%;
             margin: auto;
             border-radius: var(--solid-radius);
+
+
         }
 
         #main {

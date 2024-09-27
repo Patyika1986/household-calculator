@@ -1,0 +1,98 @@
+.header {
+
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        .toggle {
+            display: flex;
+            .result {
+                padding: .5rem;
+            }
+        }
+        .btn-box {
+
+        }
+    }
+}
+
+.cont {
+    width: 100%;
+    max-height: 10%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    box-sizing: border-box;
+    .list {
+        width: 100%;
+        margin: .3rem 0;
+        padding: .4rem;
+        box-shadow: var(--shadow);
+        .date {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            padding: .1rem;
+        }
+        .item {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            padding: .1rem;
+        }
+        .amount {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            padding: .1rem;
+        }
+        .info {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            padding: .1rem;
+        }
+
+    }
+
+}
+
+
+@media (min-width: 768px) {
+    .cont {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+        .list {
+            border-radius: var(--solid-radius);
+            width: 100%;
+            display: flex;
+            .date {
+                display: flex;
+                justify-content: left;
+                padding: .2rem;
+                width: 20%;
+            }
+            .item {
+                display: flex;
+                justify-content: left;
+                padding: .2rem;
+                width: 50%;
+            }
+            .amount {
+                display: flex;
+                justify-content: right;
+                align-items: center;
+                padding: .2rem;
+                width: 20%;
+            }
+            .info {
+                display: flex;
+                justify-content: right;
+                padding: .2rem;
+                width: 10%;
+            }
+        }
+
+    }
+}
