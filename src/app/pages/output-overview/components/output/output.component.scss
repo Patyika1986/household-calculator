@@ -5,7 +5,7 @@
 
 .wrapper {
     width: 100%;
-    height: 70vh;
+    min-height: 80vh;
 
     .content-main {
         width: 100%;
@@ -62,8 +62,6 @@
     width: 100%;
     box-shadow: var(--shadow);
     border-radius: var(--solid-radius);
-    position: absolute;
-    bottom: 0;
 }
 
 @media (min-width: 768px) {

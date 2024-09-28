@@ -3,6 +3,7 @@ import { MatSelectChange } from '@angular/material/select';
 import { Title } from '@angular/platform-browser';
 import { WhitchEdition } from 'src/app/models/whitch-edition.model';
 import { DataService } from '../../../../services/data/data.service';
+import { IncomeList } from 'src/app/models/income-list.model';
 
 @Component({
   selector: 'app-output',
@@ -13,11 +14,15 @@ export class OutputComponent implements OnInit {
   currentTitle: string = "";
   public inputOrOutput: string[] = ['Output', 'Input'];
   public isMoneyActive = false;
+  public expenseList:WhitchEdition[] = [];
 
 
   public value = 'Clear me';
 
-  constructor(private titleService: Title, public dataService:DataService) { }
+  constructor(private titleService: Title, public dataService:DataService) {
+    this.dataService.loadMergedLists();
+    this.loadList();
+   }
 
   ngOnInit(): void {
     this.currentTitle = this.titleService.getTitle();
@@ -27,10 +32,25 @@ export class OutputComponent implements OnInit {
     console.log('click from output component');
   }
 
+  private loadList(): void {
+    this.dataService.list$.subscribe((data: WhitchEdition[] | IncomeList[]) => {
+      this.expenseList = data as WhitchEdition[];
+      this.expenseList = this.expenseList.filter(item => item.isOutOrIncome === false);
+    });
+  }
+
   public changeInputsOutput(value: Event): void {
     const selectElement = value.target as HTMLSelectElement;
     const selectedValue = selectElement.value;
     console.log('Selected value:', selectedValue);
+  }
+
+  public onChangeSort(event: boolean): void {
+    if (event) {
+      this.expenseList.sort((a, b) => a.value - b.value); 
+    } else {
+      this.expenseList.sort((a, b) => b.value - a.value);
+    }
   }
 
   public clearInput(): void {

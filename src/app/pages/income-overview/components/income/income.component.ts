@@ -22,16 +22,13 @@ export class IncomeComponent implements OnInit {
   public value = 'Clear me';
 
   ngOnInit(): void {
-    this.dataService.list$.subscribe((data: WhitchEdition[] | IncomeList[]) => {
-      this.incomeList = data as WhitchEdition[];
-      this.incomeList = this.incomeList.filter(item => item.isOutOrIncome === true);
-    });
+    
   }
 
   private loadList(): void {
     this.dataService.list$.subscribe((data: WhitchEdition[] | IncomeList[]) => {
-      const items = data.filter(item => item.isOutOrIncome === true);
-      this.incomeList = items as WhitchEdition[];
+      this.incomeList = data as WhitchEdition[];
+      this.incomeList = this.incomeList.filter(item => item.isOutOrIncome === true);
     });
   }
 
