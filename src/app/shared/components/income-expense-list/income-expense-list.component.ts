@@ -16,6 +16,8 @@ export class IncomeExpenseListComponent {
   @Input() items: WhitchEdition[] = [];
   @Input() checked = false;
   @Input() disabled = false;
+  @Input() showIncomeChanges = true;
+  @Input() showExpenseChanges = true;
   @Output() changeSort = new EventEmitter<boolean>();
   @Output() changeIncome = new EventEmitter<boolean>();
   @Output() changeExpense = new EventEmitter<boolean>();

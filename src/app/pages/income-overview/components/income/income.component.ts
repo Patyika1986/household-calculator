@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { IncomeList } from 'src/app/models/income-list.model';
+import { WhitchEdition } from 'src/app/models/whitch-edition.model';
 import { DataService } from 'src/app/services/data/data.service';
 
 @Component({
@@ -6,14 +8,32 @@ import { DataService } from 'src/app/services/data/data.service';
   templateUrl: './income.component.html',
   styleUrls: ['./income.component.scss']
 })
-export class IncomeComponent {
+export class IncomeComponent implements OnInit {
 
-  constructor(public dataService:DataService) { }
+  constructor(public dataService:DataService) {
+    this.dataService.loadMergedLists();
+    this.loadList();
+   }
 
   public inputOrOutput: string[] = ['Input', 'Output'];
   public isMoneyActive = false;
+  public incomeList:WhitchEdition[] = [];
 
   public value = 'Clear me';
+
+  ngOnInit(): void {
+    this.dataService.list$.subscribe((data: WhitchEdition[] | IncomeList[]) => {
+      this.incomeList = data as WhitchEdition[];
+      this.incomeList = this.incomeList.filter(item => item.isOutOrIncome === true);
+    });
+  }
+
+  private loadList(): void {
+    this.dataService.list$.subscribe((data: WhitchEdition[] | IncomeList[]) => {
+      const items = data.filter(item => item.isOutOrIncome === true);
+      this.incomeList = items as WhitchEdition[];
+    });
+  }
 
 
   public onClick(): void {
@@ -35,6 +55,14 @@ export class IncomeComponent {
     if (selectedItem) {
       selectedItem.value === 0 ? this.isMoneyActive = true : this.isMoneyActive = false;
       console.log('Selected from income item:', selectedItem);
+    }
+  }
+
+  public onChangeSort(event: boolean): void {
+    if (event) {
+      this.incomeList.sort((a, b) => a.value - b.value); 
+    } else {
+      this.incomeList.sort((a, b) => b.value - a.value);
     }
   }
 

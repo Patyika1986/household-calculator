@@ -8,14 +8,14 @@
         </mat-slide-toggle>
       </mat-card>
       &nbsp;
-      <mat-card class="result">
+      <mat-card class="result" *ngIf="showIncomeChanges">
         <mat-slide-toggle class="example-margin" [checked]="checked" [disabled]="disabled"
           (change)="onChangeIncome($event.checked)">
           Income
         </mat-slide-toggle>
       </mat-card>
       &nbsp;
-      <mat-card class="result">
+      <mat-card class="result" *ngIf="showExpenseChanges">
         <mat-slide-toggle class="example-margin" [checked]="checked" [disabled]="disabled"
           (change)="onChangeExpense($event.checked)">
           Expense

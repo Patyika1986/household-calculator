@@ -33,6 +33,15 @@
           <app-add-btn (click)="onClick()"></app-add-btn>
         </div>
       </div>
+      <br>
+      <br>
+      <app-income-expense-list 
+        [items]="incomeList"
+        [showIncomeChanges]="false"
+        [showExpenseChanges]="false"
+        (changeSort)="onChangeSort($event)"
+      >
+    </app-income-expense-list>
     </main>
   </div>
   <footer id="footer">
