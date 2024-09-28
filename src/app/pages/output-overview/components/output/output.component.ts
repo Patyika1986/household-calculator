@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSelectChange } from '@angular/material/select';
 import { Title } from '@angular/platform-browser';
 import { WhitchEdition } from 'src/app/models/whitch-edition.model';
 import { DataService } from '../../../../services/data/data.service';
 import { IncomeList } from 'src/app/models/income-list.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-output',
@@ -19,7 +19,7 @@ export class OutputComponent implements OnInit {
 
   public value = 'Clear me';
 
-  constructor(private titleService: Title, public dataService:DataService) {
+  constructor(private titleService: Title, public dataService:DataService,private router:Router) {
     this.dataService.loadMergedLists();
     this.loadList();
    }
@@ -43,6 +43,21 @@ export class OutputComponent implements OnInit {
     const selectElement = value.target as HTMLSelectElement;
     const selectedValue = selectElement.value;
     console.log('Selected value:', selectedValue);
+    this.navigate(selectedValue);
+  }
+  private navigate(page: string): void {
+    switch (page) {
+      case 'Output':
+        //this.router.navigate(['/output']);
+        console.warn('You are already on this page', page);
+        break;
+      case 'Input':
+        this.router.navigate(['/income']);
+        break;
+      default:
+        console.warn('No such page');
+        break;
+    }
   }
 
   public onChangeSort(event: boolean): void {

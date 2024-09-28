@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IncomeList } from 'src/app/models/income-list.model';
 import { WhitchEdition } from 'src/app/models/whitch-edition.model';
 import { DataService } from 'src/app/services/data/data.service';
@@ -10,19 +11,19 @@ import { DataService } from 'src/app/services/data/data.service';
 })
 export class IncomeComponent implements OnInit {
 
-  constructor(public dataService:DataService) {
+  constructor(public dataService: DataService, private router: Router) {
     this.dataService.loadMergedLists();
     this.loadList();
-   }
+  }
 
   public inputOrOutput: string[] = ['Input', 'Output'];
   public isMoneyActive = false;
-  public incomeList:WhitchEdition[] = [];
+  public incomeList: WhitchEdition[] = [];
 
   public value = 'Clear me';
 
   ngOnInit(): void {
-    
+
   }
 
   private loadList(): void {
@@ -37,9 +38,25 @@ export class IncomeComponent implements OnInit {
     console.log('click from income component');
   }
 
+  private navigate(page: string): void {
+    switch (page) {
+      case 'Output':
+        this.router.navigate(['/output']);
+        break;
+      case 'Input':
+        //this.router.navigate(['/income']);
+        console.warn('You are already on this page', page);
+        break;
+      default:
+        console.warn('No such page');
+        break;
+    }
+  }
+
   public changeInputsOutput(selected: Event): void {
     const selectElement = selected.target as HTMLSelectElement;
     const selectedValue = selectElement.value;
+    this.navigate(selectedValue);
     console.log('Selected value: from income', selectedValue);
   }
 
@@ -57,7 +74,7 @@ export class IncomeComponent implements OnInit {
 
   public onChangeSort(event: boolean): void {
     if (event) {
-      this.incomeList.sort((a, b) => a.value - b.value); 
+      this.incomeList.sort((a, b) => a.value - b.value);
     } else {
       this.incomeList.sort((a, b) => b.value - a.value);
     }
