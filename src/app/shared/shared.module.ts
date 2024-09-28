@@ -31,6 +31,9 @@ import { AddBtnComponent } from './components/add-btn/add-btn.component';
 import { AddTaskBtnComponent } from './components/add-task-btn/add-task-btn.component';
 import { IncomeExpenseBtnComponent } from './components/income-expense-btn/income-expense-btn.component';
 import { IncomeExpenseListComponent } from './components/income-expense-list/income-expense-list.component';
+import { DiagramComponent } from './components/diagram/diagram.component';
+
+
 
 @NgModule({
   declarations: [
@@ -47,7 +50,8 @@ import { IncomeExpenseListComponent } from './components/income-expense-list/inc
     AddBtnComponent,
     AddTaskBtnComponent,
     IncomeExpenseBtnComponent,
-    IncomeExpenseListComponent
+    IncomeExpenseListComponent,
+    DiagramComponent
   ],
   imports: [
     CommonModule,
@@ -63,7 +67,7 @@ import { IncomeExpenseListComponent } from './components/income-expense-list/inc
     MatSlideToggleModule,
     MatCheckboxModule,
     MatCardModule,
-    MatBadgeModule
+    MatBadgeModule,
   ],
   exports: [
     SpinnerComponent,
@@ -87,7 +91,8 @@ import { IncomeExpenseListComponent } from './components/income-expense-list/inc
     MatRadioModule,
     MatDatepickerModule,
     IncomeExpenseBtnComponent,
-    IncomeExpenseListComponent
+    IncomeExpenseListComponent,
+    DiagramComponent,
   ]
 })
 export class SharedModule { }

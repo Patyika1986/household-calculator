@@ -37,10 +37,10 @@ export class DataService {
   ];
 
   public incomeList: IncomeList[] = [
-    { id: '1', title: 'Salary', value: 3200, since:new Date(), isOutOrIncome: true },
-    { id: '2', title: 'Child benefit ', value: 750, since:new Date(), isOutOrIncome: true },
-    { id: '3', title: 'Child allowance', value: 600, since:new Date(), isOutOrIncome: true },
-    { id: '4', title: 'Test', value: 0, since:new Date(), isOutOrIncome: true },
+    { id: '1', title: 'Salary', value: 3200, since:new Date(), isOutOrIncome: true,kind:'Salary' },
+    { id: '2', title: 'Child benefit ', value: 750, since:new Date(), isOutOrIncome: true,kind:'Salary' },
+    { id: '3', title: 'Child allowance', value: 600, since:new Date(), isOutOrIncome: true,kind:'Salary' },
+    { id: '4', title: 'Test', value: 0, since:new Date(), isOutOrIncome: true,kind:'Salary' },
   ];
 
 

@@ -3,5 +3,6 @@ export interface IncomeList {
     title: string;
     value:number;
     since?: Date;
+    kind: string;
     isOutOrIncome: boolean;
 }
