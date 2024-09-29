@@ -20,6 +20,7 @@ export class HomeOverviewComponent {
 
 
   public navigateToInfo(): void {
+    this.router.navigate(['/info-software']);
     console.log('navigateToInfo');
   }
   
