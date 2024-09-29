@@ -19,6 +19,7 @@ export class IncomeComponent implements OnInit {
   public inputOrOutput: string[] = ['Input', 'Output'];
   public isMoneyActive = false;
   public incomeList: WhitchEdition[] = [];
+  public total = 0;
 
   public value = 'Clear me';
 
@@ -30,9 +31,9 @@ export class IncomeComponent implements OnInit {
     this.dataService.list$.subscribe((data: WhitchEdition[] | IncomeList[]) => {
       this.incomeList = data as WhitchEdition[];
       this.incomeList = this.incomeList.filter(item => item.isOutOrIncome === true);
+      this.total = parseFloat(this.incomeList.reduce((acc, item) => acc + item.value, 0).toFixed(2));
     });
   }
-
 
   public onClick(): void {
     console.log('click from income component');

@@ -1,16 +1,16 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { IncomeList } from 'src/app/models/income-list.model';
 import { WhitchEdition } from 'src/app/models/whitch-edition.model';
+import { DataService } from 'src/app/services/data/data.service';
 
 @Component({
   selector: 'app-income-expense-list',
   templateUrl: './income-expense-list.component.html',
   styleUrls: ['./income-expense-list.component.scss']
 })
-export class IncomeExpenseListComponent {
+export class IncomeExpenseListComponent{
 
-  constructor() {
-
+  constructor(private dataService: DataService) {
+    this.dataService.loadMergedLists();
   }
 
   @Input() items: WhitchEdition[] = [];
@@ -21,6 +21,7 @@ export class IncomeExpenseListComponent {
   @Output() changeSort = new EventEmitter<boolean>();
   @Output() changeIncome = new EventEmitter<boolean>();
   @Output() changeExpense = new EventEmitter<boolean>();
+  @Input() totalAmount = 0;
 
 
   public onChangeSort(event: boolean): void {

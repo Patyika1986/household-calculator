@@ -15,6 +15,7 @@ export class OutputComponent implements OnInit {
   public inputOrOutput: string[] = ['Output', 'Input'];
   public isMoneyActive = false;
   public expenseList:WhitchEdition[] = [];
+  public total = 0;
 
 
   public value = 'Clear me';
@@ -36,6 +37,7 @@ export class OutputComponent implements OnInit {
     this.dataService.list$.subscribe((data: WhitchEdition[] | IncomeList[]) => {
       this.expenseList = data as WhitchEdition[];
       this.expenseList = this.expenseList.filter(item => item.isOutOrIncome === false);
+      this.total = parseFloat(this.expenseList.reduce((acc, item) => acc + item.value, 0).toFixed(2));
     });
   }
 

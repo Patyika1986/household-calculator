@@ -12,7 +12,7 @@
       <div class="content">
         <app-income-expense-list [items]="items" (checked)="checked" (disabled)="disabled"
           (changeIncome)="onChangeIncome($event)" (changeExpense)="onChangeExpense($event)"
-          (changeSort)="changeSort($event)"></app-income-expense-list>
+          (changeSort)="changeSort($event)" [totalAmount]="total"></app-income-expense-list>
       </div>
     </main>
     <footer id="footer">
