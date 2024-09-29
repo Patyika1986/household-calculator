@@ -19,13 +19,11 @@ export class DiagramComponent implements AfterViewInit, OnInit {
   public items: WhitchEdition[] = [];
 
   constructor(private dataService: DataService) {
-    // Registriere alle nötigen Komponenten (wie Skalen, Tooltip, Legend, etc.)
     this.dataService.loadMergedLists();
     Chart.register(...registerables);
   }
 
   ngOnInit(): void {
-    // Optional: Initialisierung
     this.loadDatas();
   }
 
@@ -125,7 +123,6 @@ export class DiagramComponent implements AfterViewInit, OnInit {
   public toggleChart(): void {
     const newChartType: 'bar' | 'doughnut' = this.toggleLabel === 'Bar Chart' ? 'doughnut' : 'bar';
     this.toggleLabel = this.toggleLabel === 'Bar Chart' ? 'Doughnut Chart' : 'Bar Chart';
-    console.warn(this.chart)
     this.renderChart(newChartType);
   }
 }

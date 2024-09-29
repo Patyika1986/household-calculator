@@ -40,7 +40,6 @@ export class IncomeExpenseOverviewComponent implements OnInit {
 
   private sortItems(): void {
     this.items.sort((a, b) => b.value - a.value);
-    console.warn(this.checked)
   }
 
   public changeSort(event: boolean): void {
