@@ -1,0 +1,58 @@
+<app-header></app-header>
+<div class="cont">
+    <header id="top-header">
+        <div class="text">
+            <h1>
+                {{ title}}
+            </h1>
+            <div class="logout-btn">
+                <app-logout-btn (logout)="logout()"></app-logout-btn>
+            </div>
+        </div>
+    </header>
+    <div class="wrapper">
+        <div class="button-wrapper">
+            <app-income-btn [page]="'/income'"></app-income-btn>
+            <app-output-btn [page]="'/output'"></app-output-btn>
+            <app-income-expense-btn [page]="'income-expense-overview'"></app-income-expense-btn>
+            <app-add-task-btn [pages]="'/add-tasks-overview'"></app-add-task-btn>
+            <app-diagram [page]="'diagram'"></app-diagram>
+        </div>
+    </div>
+
+    <main id="main">
+        <div class="article">
+            <div class="header">
+                <h2>
+                    {{ greeting }}
+                </h2>
+            </div>
+            <p>
+                Below I will describe exactly what you should do first so that you can make the best possible use of the application.
+            </p>
+            <hr>
+
+            <ol>
+                <li>
+                    Register so you can use all functions
+                </li>
+                <li>
+                    Log in
+                </li>
+                <li>
+                    After logging in, take your time to look at all the pages. You can go to each page using the blue buttons
+                </li>
+                <li>
+                    For Income you can add an income for your current month. To do this, first select the income from the dropdown and click on add. If the one you want is not there, please go to the Add Task page first. There you can choose whether it is an income or output is accordingly, you have to fill out all the fields, then go back to the Income page and select your newly added one from the dropdown list and add it
+                </li>
+                <li>
+                    You can do the same thing with expenses, the two sides are very identical
+                </li>
+            </ol>
+        </div>
+    </main>
+
+    <footer id="footer">
+      <app-footer-content></app-footer-content>
+    </footer>
+</div>
