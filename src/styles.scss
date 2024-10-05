@@ -13,7 +13,7 @@
   --solid-radius: 4px;
 
   // shadows:
-  --shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  --shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
   // lists: colors
   --list-bg-green: #2ac70a;
@@ -29,6 +29,7 @@ html, body {
   scroll-behavior: smooth;
 }
 
+
 .amount {
   color: var(--list-bg-color);
 }
@@ -43,8 +44,3 @@ html, body {
   padding: .5rem 1rem;
   transition: background-color .3s, color .3s;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

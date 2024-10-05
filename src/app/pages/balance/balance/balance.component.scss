@@ -1,0 +1,135 @@
+.cont {
+    height: 100%;
+
+    #top-header {
+        height: 5%;
+        background-color: white;
+        padding: .5rem;
+
+        .text {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            h1 {
+                margin: 0;
+            }
+
+            .logout-btn {}
+        }
+    }
+
+    .wrapper {
+        max-height: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: white;
+        box-shadow: var(--shadow);
+        padding-right: .5rem;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+
+
+        .info-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+
+           
+        }
+    }
+
+    #main {
+        height: 72%;
+        margin-top: 1rem;
+        box-shadow: var(--shadow);
+
+        .header {
+            padding: 1rem;
+            border-bottom: 1px solid gray;
+        }
+
+    }
+
+
+
+    #footer {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        background-color: white;
+        box-shadow: var(--shadow);
+        padding: .5rem;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 768px){
+    .button-wrapper {
+        display: flex;
+        flex-direction: column;
+        background-color: yellowgreen;
+        margin-top: 4rem;
+        padding: 1rem;
+        justify-content: left;
+    }
+    .wrapper {
+        width: 100%;
+        border-radius: var(--solid-radius);
+    }
+}
+
+// Responsive design
+@media (min-width: 768px) {
+    .cont {
+        width: 80%;
+        margin: 1rem auto;
+
+        .wrapper {
+            width: 100%;
+            margin: auto;
+            border-radius: var(--solid-radius);
+
+            .button-wrapper {
+                padding-left: .5rem;
+            }
+
+        }
+
+        #main {
+            height: 65%;
+
+
+            .header {
+
+            }
+
+            button {
+                padding: .7rem 1.5rem;
+                margin-top: 1rem;
+                margin-left: 0;
+            }
+        }
+
+        #footer {
+            width: 80%;
+            margin: auto;
+            box-shadow: var(--shadow);
+            border-radius: var(--solid-radius);
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .cont {
+        width: 70%;
+
+        #footer {
+            width: 70%;
+        }
+    }
+}

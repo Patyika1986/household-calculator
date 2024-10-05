@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RegistComponent } from './auth/components/regist/regist.component';
 
 const routes: Routes = [
+  { path: 'balance', loadChildren: () => import('./pages/balance/balance.module').then(m => m.BalanceModule) ,data: { title: 'Balance' }},
   { path: 'info-software', loadChildren: () => import('./pages/info/info.module').then(m => m.InfoModule) ,data: { title: 'Info-Software' }},
   { path: 'info', loadChildren: () => import('./pages/funcionality/funcionality.module').then(m => m.FuncionalityModule) ,data: { title: 'Info' }},
   { path: 'diagram', loadChildren: () => import('./pages/diagram/diagram.module').then(m => m.DiagramModule) ,data: { title: 'Diagram' }},

@@ -32,6 +32,7 @@ import { AddTaskBtnComponent } from './components/add-task-btn/add-task-btn.comp
 import { IncomeExpenseBtnComponent } from './components/income-expense-btn/income-expense-btn.component';
 import { IncomeExpenseListComponent } from './components/income-expense-list/income-expense-list.component';
 import { DiagramComponent } from './components/diagram/diagram.component';
+import { BalanceBtnComponent } from './components/balance-btn/balance-btn.component';
 
 
 
@@ -51,7 +52,8 @@ import { DiagramComponent } from './components/diagram/diagram.component';
     AddTaskBtnComponent,
     IncomeExpenseBtnComponent,
     IncomeExpenseListComponent,
-    DiagramComponent
+    DiagramComponent,
+    BalanceBtnComponent
   ],
   imports: [
     CommonModule,
@@ -93,6 +95,7 @@ import { DiagramComponent } from './components/diagram/diagram.component';
     IncomeExpenseBtnComponent,
     IncomeExpenseListComponent,
     DiagramComponent,
+    BalanceBtnComponent
   ]
 })
 export class SharedModule { }

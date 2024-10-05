@@ -1,43 +1,40 @@
 <app-header></app-header>
-<div class="cont">
-    <header id="top-header">
-        <div class="text">
-            <h1>
-                {{ title}}
-            </h1>
-            <div class="logout-btn">
-                <app-logout-btn (logout)="logout()"></app-logout-btn>
+<div class="container">
+    <div class="cont">
+
+        <div class="wrapper">
+            <div class="button-wrapper">
+                <app-income-btn [page]="'/income'"></app-income-btn>
+                <app-output-btn [page]="'/output'"></app-output-btn>
+                <app-income-expense-btn [page]="'income-expense-overview'"></app-income-expense-btn>
+                <app-add-task-btn [pages]="'/add-tasks-overview'"></app-add-task-btn>
+                <app-diagram [page]="'/diagram'"></app-diagram>
+                <app-balance-btn [page]="'/balance'"></app-balance-btn>
+            </div>
+            <div class="info-btn">
+                <app-info-btn (openInfo)="navigateToInfo()"></app-info-btn>
             </div>
         </div>
-    </header>
-    <div class="wrapper">
-        <div class="button-wrapper">
-            <app-income-btn [page]="'/income'"></app-income-btn>
-            <app-output-btn [page]="'/output'"></app-output-btn>
-            <app-income-expense-btn [page]="'income-expense-overview'"></app-income-expense-btn>
-            <app-add-task-btn [pages]="'/add-tasks-overview'"></app-add-task-btn>
-            <app-diagram [page]="'diagram'"></app-diagram>
-        </div>
-        <div class="info-btn">
-            <app-info-btn (openInfo)="navigateToInfo()"></app-info-btn>
-        </div>
+
+        <main id="main">
+            <div class="article">
+                <div class="header">
+                    <h2>
+                        {{ greeting }}
+                    </h2>
+                </div>
+                <p>
+                    I've always wondered if there was an easier way to keep track of my monthly income and expenses, and
+                    do it all without a calculator. And so I decided to develop one simply for myself and for the men
+                    who need it. Have your first experience and click on the button below (Functionality) and read the
+                    description of how you can get the best out of the web app and benefit.
+                </p>
+            </div>
+            <app-functionality-btn (navigateFunctionality)="navigateToFunctionality()"></app-functionality-btn>
+        </main>
     </div>
 
-    <main id="main">
-        <div class="article">
-            <div class="header">
-                <h2>
-                    {{ greeting }}
-                </h2>
-            </div>
-            <p>
-                I've always wondered if there was an easier way to keep track of my monthly income and expenses, and do it all without a calculator. And so I decided to develop one simply for myself and for the men who need it. Have your first experience and click on the button below (Functionality) and read the description of how you can get the best out of the web app and benefit.
-            </p>
-        </div>
-        <app-functionality-btn (navigateFunctionality)="navigateToFunctionality()"></app-functionality-btn>
-    </main>
-
-    <footer id="footer">
-      <app-footer-content></app-footer-content>
-    </footer>
 </div>
+<footer id="footer">
+    <app-footer-content></app-footer-content>
+</footer>
